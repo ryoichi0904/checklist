@@ -1,11 +1,105 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <title>チェックリスト</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動作確認チェックリスト</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>GitHub Pagesの公開成功！🎉</h1>
-  <p>ここからチェックリストを作っていきます。</p>
+
+    <header>
+        <h1>📝 動作確認チェックリスト</h1>
+        <p>発表前にすべて確認しましょう！</p>
+    </header>
+
+    <main>
+
+        <!-- 進捗 -->
+        <section class="progress-area">
+
+            <h2>進捗状況</h2>
+
+            <progress id="progressBar" value="0" max="100"></progress>
+
+            <p id="progressText">
+                0%
+            </p>
+
+            <button id="resetBtn">
+                すべてクリア
+            </button>
+
+        </section>
+
+        <!-- パソコン -->
+        <section class="card">
+
+            <h2>💻 パソコン・ネットワーク</h2>
+
+            <label>
+                <input type="checkbox">
+                ラズパイを先に起動して少し待ってからWi-Fiへ接続
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Wi-Fiを04へ接続している
+            </label>
+
+            <label>
+                <input type="checkbox">
+                インターネットへ接続されている
+            </label>
+
+        </section>
+
+        <!-- 開発環境 -->
+        <section class="card">
+
+            <h2>⚙️ 開発環境</h2>
+
+            <label>
+                <input type="checkbox">
+                WSLが起動している
+            </label>
+
+            <label>
+                <input type="checkbox">
+                仮想環境(.iot)へ入っている
+            </label>
+
+            <label>
+                <input type="checkbox">
+                必要なライブラリが入っている
+            </label>
+
+        </section>
+
+        <!-- データベース -->
+        <section class="card">
+
+            <h2>🗄 データベース</h2>
+
+            <label><input type="checkbox">PostgreSQLが起動している</label>
+
+            <label><input type="checkbox">接続できる</label>
+
+            <label><input type="checkbox">accountsテーブルが存在する</label>
+
+            <label><input type="checkbox">user_profilesテーブルが存在する</label>
+
+            <label><input type="checkbox">sheltersテーブルが存在する</label>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
