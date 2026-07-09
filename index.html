@@ -5,94 +5,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>動作確認チェックリスト</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>📝 動作確認チェックリスト</h1>
-        <p>発表前にすべて確認しましょう！</p>
+        <h1>📝 動作がうまくいかなかった場合のチェック項目</h1>
     </header>
 
     <main>
 
-        <!-- 進捗 -->
         <section class="progress-area">
-
             <h2>進捗状況</h2>
 
             <progress id="progressBar" value="0" max="100"></progress>
 
-            <p id="progressText">
-                0%
-            </p>
+            <p id="progressText">0%</p>
 
-            <button id="resetBtn">
-                すべてクリア
-            </button>
-
+            <button id="resetBtn">すべてクリア</button>
         </section>
 
-        <!-- パソコン -->
+        <!-- パソコン・ネットワーク -->
         <section class="card">
-
             <h2>💻 パソコン・ネットワーク</h2>
 
-            <label>
-                <input type="checkbox">
-                ラズパイを先に起動して少し待ってからWi-Fiへ接続
-            </label>
-
-            <label>
-                <input type="checkbox">
-                Wi-Fiを04へ接続している
-            </label>
-
-            <label>
-                <input type="checkbox">
-                インターネットへ接続されている
-            </label>
+            <label><input type="checkbox">ラズパイを先に起動してちょっと経ってからWi-Fiに接続する</label>
+            <label><input type="checkbox">Wi-Fiをちゃんと04に接続しているか</label>
+            <label><input type="checkbox">インターネットに接続されているか</label>
 
         </section>
 
         <!-- 開発環境 -->
         <section class="card">
-
             <h2>⚙️ 開発環境</h2>
 
-            <label>
-                <input type="checkbox">
-                WSLが起動している
-            </label>
-
-            <label>
-                <input type="checkbox">
-                仮想環境(.iot)へ入っている
-            </label>
-
-            <label>
-                <input type="checkbox">
-                必要なライブラリが入っている
-            </label>
+            <label><input type="checkbox">WSLが起動しているか</label>
+            <label><input type="checkbox">仮想環境（.iot）に入っているか</label>
+            <label><input type="checkbox">必要なライブラリがインストールされているか</label>
 
         </section>
 
         <!-- データベース -->
         <section class="card">
-
             <h2>🗄 データベース</h2>
 
-            <label><input type="checkbox">PostgreSQLが起動している</label>
+            <label><input type="checkbox">PostgreSQLが起動しているか</label>
+            <label><input type="checkbox">PostgreSQLに接続できるか</label>
+            <label><input type="checkbox">データベース接続情報が正しいか</label>
+            <label><input type="checkbox">accountsテーブルが存在するか</label>
+            <label><input type="checkbox">user_profilesテーブルが存在するか</label>
+            <label><input type="checkbox">sheltersテーブルが存在するか</label>
 
-            <label><input type="checkbox">接続できる</label>
+        </section>
 
-            <label><input type="checkbox">accountsテーブルが存在する</label>
+        <!-- プログラム起動 -->
+        <section class="card">
+            <h2>🚀 プログラム起動</h2>
 
-            <label><input type="checkbox">user_profilesテーブルが存在する</label>
+            <label><input type="checkbox">Flaskサーバー（python3 app.py）が起動しているか</label>
+            <label><input type="checkbox">ターミナルにエラーが出ていないか</label>
 
-            <label><input type="checkbox">sheltersテーブルが存在する</label>
+        </section>
+
+        <!-- メール設定 -->
+        <section class="card">
+            <h2>📧 メール設定</h2>
+
+            <label><input type="checkbox">Gmailのメールアドレスが正しいか</label>
+            <label><input type="checkbox">Gmailのアプリパスワードが正しいか</label>
+            <label><input type="checkbox">Gmailのアカウント設定（MAIL_SERVERなどSMTP設定）が正しいか</label>
+
+        </section>
+
+        <!-- ログイン確認 -->
+        <section class="card">
+            <h2>🔐 ログイン確認</h2>
+
+            <label><input type="checkbox">ログイン画面が表示されるか</label>
+            <label><input type="checkbox">入力したメールアドレスが登録されているか</label>
+            <label><input type="checkbox">パスワードが正しいか</label>
+            <label><input type="checkbox">accountsからアカウントを取得できているか</label>
+
+        </section>
+
+        <!-- OTP送信 -->
+        <section class="card">
+            <h2>📨 OTP送信</h2>
+
+            <label><input type="checkbox">OTP（6桁）が生成されているか</label>
+            <label><input type="checkbox">メール送信時にエラーが出ていないか</label>
+            <label><input type="checkbox">メール送信完了と表示されるか</label>
+            <label><input type="checkbox">メールが受信トレイに届くか</label>
+            <label><input type="checkbox">迷惑メールも確認したか</label>
+
+        </section>
+
+        <!-- OTP確認 -->
+        <section class="card">
+            <h2>✅ OTP確認</h2>
+
+            <label><input type="checkbox">届いたOTPを入力できるか</label>
+            <label><input type="checkbox">ホーム画面へ遷移するか</label>
+            <label><input type="checkbox">間違ったOTPでエラー表示されるか</label>
+
+        </section>
+
+        <!-- OTP再送 -->
+        <section class="card">
+            <h2>🔄 OTP再送</h2>
+
+            <label><input type="checkbox">再送ボタンが動作するか</label>
+            <label><input type="checkbox">新しいOTPがメールに届くか</label>
+            <label><input type="checkbox">古いOTPが無効になっているか</label>
+
+        </section>
+
+        <!-- ログイン後 -->
+        <section class="card">
+            <h2>👤 ログイン後</h2>
+
+            <label><input type="checkbox">session["email"]が保存されているか</label>
+            <label><input type="checkbox">session["role"]が保存されているか</label>
+            <label><input type="checkbox">利用者ページが表示されるか</label>
+            <label><input type="checkbox">ログアウトできるか</label>
+
+        </section>
+
+        <!-- 新規登録 -->
+        <section class="card">
+            <h2>🆕 新規登録</h2>
+
+            <label><input type="checkbox">新規登録画面が開くか</label>
+            <label><input type="checkbox">登録内容が保存されるか</label>
+            <label><input type="checkbox">accountsテーブルの件数が増えるか</label>
+            <label><input type="checkbox">user_profilesに保存されるか</label>
+            <label><input type="checkbox">新しく登録したアカウントでログインできるか</label>
+
+        </section>
+
+        <!-- 最終確認 -->
+        <section class="card">
+            <h2>🎯 最終確認</h2>
+
+            <label><input type="checkbox">GitHubの最新ソースコードになっているか</label>
+            <label><input type="checkbox">チームメンバーとの変更と競合していないか</label>
+            <label><input type="checkbox">ログイン→OTP送信→OTP入力→ホーム画面まで一通り動作確認したか</label>
+            <label><input type="checkbox">Flask-Mailがインストールされているか</label>
+            <label><input type="checkbox">qrcodeなどの必要なライブラリがインストールされているか</label>
+            <label><input type="checkbox">app.pyのメール設定（SMTP）が正しいか</label>
 
         </section>
 
